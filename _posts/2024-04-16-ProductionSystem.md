@@ -50,12 +50,12 @@ tags:
 def loadRules(filename):
     rules = {}
     with open(filename, 'r', encoding='utf-8') as f:
-        rule_index = 1  # 从1开始计数规则
-        for line in f:
-            rule_content = line.strip()  # 直接将整行作为规则内容
-            rules[rule_index] = rule_content.split(' ') # 用空格分割
-            rule_index += 1
-    return rules
+        rule_index = 1  # 从1开始计数规则  
+        for line in f:  
+            rule_content = line.strip()  # 直接将整行作为规则内容  
+            rules[rule_index] = rule_content.split(' ') # 用空格分割  
+            rule_index += 1  
+    return rules  
 ```
 # 推理
 
@@ -64,9 +64,9 @@ def loadRules(filename):
 用内存中的变量定义为特征库，是其初始为空。
 
 ```python
-# 特征库列表
-features = []
-features.extend(feature.split())
+# 特征库列表  
+features = []  
+features.extend(feature.split())  
 ```
 
 ## 推理执行
@@ -74,30 +74,30 @@ features.extend(feature.split())
 外层循环中进行顺序，在内层循环获取规则，若符合则输出当前规则，将当前规则的索引加入已找到的索引列表foundRules，将当前规则的最后一项，结论部分加入特征库并输出，将符合规则标志ruleFound置真并跳出循环。
 
 ```python
-while True:
-    ruleFound = False
-    for rule_index, rule_content in rules.items():
-        # 如果这条规则已经被找到过，则跳过
-        if rule_index in foundRules:
-            continue
-        # 检查规则中的条件是否都在特征库中
-        if all(item in features for item in rule_content[:-1]):
-            # 输出使用的规则及其条件
-            print("rule{} : if {} then {}".format(rule_index, ' and '.join(rule_content[:-1]), rule_content[-1]))
-            # 将找到的规则序号加入到已找到的规则列表中
-            foundRules.append(rule_index)
-            # 将新的特征加入到特征库中
-            features.append(rule_content[-1])
-            print("特征库：", features)
-            ruleFound = True
-            break
-    # 如果没有找到新的规则，返回失败
-    if not ruleFound:
-        print("无法推断新的结论。")
-        return ("推理失败。")
-    # 检查是否已经找到最终规则
-    if max(foundRules) >= 10:
-        return features[-1]
+while True:  
+    ruleFound = False  
+    for rule_index, rule_content in rules.items():  
+        # 如果这条规则已经被找到过，则跳过  
+        if rule_index in foundRules:  
+            continue  
+        # 检查规则中的条件是否都在特征库中  
+        if all(item in features for item in rule_content[:-1]):  
+            # 输出使用的规则及其条件  
+            print("rule{} : if {} then {}".format(rule_index, ' and '.join  (rule_content[:-1]), rule_content[-1]))  
+            # 将找到的规则序号加入到已找到的规则列表中  
+            foundRules.append(rule_index)  
+            # 将新的特征加入到特征库中   
+            features.append(rule_content[-1])  
+            print("特征库：", features)  
+            ruleFound = True  
+            break  
+    # 如果没有找到新的规则，返回失败   
+    if not ruleFound:  
+        print("无法推断新的结论。")   
+        return ("推理失败。")   
+    # 检查是否已经找到最终规则   
+    if max(foundRules) >= 10:  
+        return features[-1]   
 ```
 ## 跳出判断
 
@@ -105,13 +105,13 @@ while True:
 
 ```python
 
-# 如果没有找到新的规则，返回失败
-if not ruleFound:
-    print("无法推断新的结论。")
-    return ("推理失败。")
-# 检查是否已经找到最终规则
-if max(foundRules) >= 10:
-    return features[-1]
+# 如果没有找到新的规则，返回失败   
+if not ruleFound:  
+    print("无法推断新的结论。")  
+    return ("推理失败。")  
+# 检查是否已经找到最终规则  
+if max(foundRules) >= 10:  
+    return features[-1]  
 
 ```
 
