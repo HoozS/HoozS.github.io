@@ -1,1 +1,37 @@
-Hello World
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<span id="time"></span>
+		<script>
+			function show() {
+                var t = new Date();
+                y = t.getFullYear();
+                mon = t.getMonth();
+                d = t.getDate();
+                h = t.getHours();
+                min = t.getMinutes();
+                s = t.getSeconds();
+            
+                mon = check(mon);
+                d = check(d);
+                h = check(h);
+                min = check(min);
+                s = check(s);
+
+				var element = document.getElementById("time");
+				element.innerHTML = y + "-" + mon + "-" + d + "-" + h + ":" + min + ":" + s;
+            }
+            function check(n) {
+                if(n<10)
+                    n = "0" + n;
+                return n;
+            }
+			show();
+			setInterval("show()",500);
+		</script>
+	</body>
+</html>
