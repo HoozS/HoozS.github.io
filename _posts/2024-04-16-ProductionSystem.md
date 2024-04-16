@@ -47,15 +47,17 @@ tags:
 用以下代码读取
 
 ```python
-def loadRules(filename):
-    rules = {}
-    with open(filename, 'r', encoding='utf-8') as f:
-        rule_index = 1  # 从1开始计数规则  
+
+def loadRules(filename):  
+    rules = {}  
+    with open(filename, 'r', encoding='utf-8') as f:  
+        rule_index = 1  # 从1开始计数规则   
         for line in f:  
-            rule_content = line.strip()  # 直接将整行作为规则内容  
-            rules[rule_index] = rule_content.split(' ') # 用空格分割  
+            rule_content = line.strip()  # 直接将整行作为规则内容   
+            rules[rule_index] = rule_content.split(' ') # 用空格分割   
             rule_index += 1  
-    return rules  
+    return rules
+
 ```
 # 推理
 
@@ -64,9 +66,11 @@ def loadRules(filename):
 用内存中的变量定义为特征库，是其初始为空。
 
 ```python
+
 # 特征库列表  
-features = []  
-features.extend(feature.split())  
+features = []    
+features.extend(feature.split())   
+
 ```
 
 ## 推理执行
@@ -74,6 +78,7 @@ features.extend(feature.split())
 外层循环中进行顺序，在内层循环获取规则，若符合则输出当前规则，将当前规则的索引加入已找到的索引列表foundRules，将当前规则的最后一项，结论部分加入特征库并输出，将符合规则标志ruleFound置真并跳出循环。
 
 ```python
+
 while True:  
     ruleFound = False  
     for rule_index, rule_content in rules.items():  
@@ -98,6 +103,7 @@ while True:
     # 检查是否已经找到最终规则   
     if max(foundRules) >= 10:  
         return features[-1]   
+
 ```
 ## 跳出判断
 
