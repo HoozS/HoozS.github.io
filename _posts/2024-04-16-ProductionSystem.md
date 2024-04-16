@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "产生式系统实验"
-subtitle:   " 基于Python的产生式动物识别系统"
+subtitle:   "基于Python的产生式动物识别系统"
 date:       2024-04-16 18:00:00
 author:     "Hooz"
 header-img: "img/post-bg-2015.jpg"
@@ -65,9 +65,9 @@ def loadRules(filename):
 
 ```
 
-## 推理
+## 推理  
 
-### 建立特征库
+### 建立特征库  
 
 用内存中的变量定义为特征库，是其初始为空。
 
@@ -80,7 +80,7 @@ features.extend(feature.split())
 
 ```
 
-### 推理执行
+### 推理执行  
 
 外层循环中进行顺序，在内层循环获取规则，若符合则输出当前规则，将当前规则的索引加入已找到的索引列表foundRules，将当前规则的最后一项，结论部分加入特征库并输出，将符合规则标志ruleFound置真并跳出循环。
 
@@ -120,7 +120,7 @@ while True:
 
 ```
 
-### 跳出判断
+### 跳出判断  
 
 由于初始设置为一定规则之后为最终规则，找到就跳出，如果没有找到任何新的规则，就跳出并输出错误信息。
 
@@ -138,6 +138,6 @@ if max(foundRules) >= 10:
 
 ```
 
-## 结果
+## 结果  
 
 ![20240416183232](https://raw.githubusercontent.com/HoozS/pic/main/pic/20240416183232.png)
