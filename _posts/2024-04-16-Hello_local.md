@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Hello"
+title:      "HelloLocal"
 subtitle:   " \"Hello World, Hello Blog\""
 date:       2024-04-16 12:00:00
 author:     "Hooz"
