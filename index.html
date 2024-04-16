@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-hello world
-=======
 ---
 layout: page
-description: "Boilerplate of Hux Blog"
+description: "「离开世界之前 一切都是过程」"
 ---
 
 {% for post in paginator.posts %}
@@ -18,7 +15,11 @@ description: "Boilerplate of Hux Blog"
         </h3>
         {% endif %}
         <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:200 }}
+            {% if post.lang == 'en' %}
+                {{ post.content | strip_html | truncate:300 }}
+            {% else %}
+                {{ post.content | strip_html | truncate:200 }}
+            {% endif %}
         </div>
     </a>
     <p class="post-meta">
@@ -43,4 +44,3 @@ description: "Boilerplate of Hux Blog"
     {% endif %}
 </ul>
 {% endif %}
->>>>>>> 3ce5b59d113fbb9f67dc26e46b539c317eff18c6
