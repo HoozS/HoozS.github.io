@@ -59,7 +59,7 @@ def loadRules(filename):
             rule_content = line.strip()  # 直接将整行作为规则内容   
 
             rules[rule_index] = rule_content.split(' ') # 用空格分割   
-            
+
             rule_index += 1  
     return rules
 
@@ -74,6 +74,7 @@ def loadRules(filename):
 ```python
 
 # 特征库列表  
+
 features = []    
 features.extend(feature.split())   
 
@@ -89,24 +90,31 @@ while True:
     ruleFound = False  
     for rule_index, rule_content in rules.items():  
         # 如果这条规则已经被找到过，则跳过  
+
         if rule_index in foundRules:  
             continue  
         # 检查规则中的条件是否都在特征库中  
+
         if all(item in features for item in rule_content[:-1]):  
             # 输出使用的规则及其条件  
+            
             print("rule{} : if {} then {}".format(rule_index, ' and '.join  (rule_content[:-1]), rule_content[-1]))  
             # 将找到的规则序号加入到已找到的规则列表中  
+
             foundRules.append(rule_index)  
             # 将新的特征加入到特征库中   
+
             features.append(rule_content[-1])  
             print("特征库：", features)  
             ruleFound = True  
             break  
     # 如果没有找到新的规则，返回失败   
+
     if not ruleFound:  
         print("无法推断新的结论。")   
         return ("推理失败。")   
     # 检查是否已经找到最终规则   
+
     if max(foundRules) >= 10:  
         return features[-1]   
 
@@ -119,10 +127,12 @@ while True:
 ```python
 
 # 如果没有找到新的规则，返回失败   
+
 if not ruleFound:  
     print("无法推断新的结论。")  
     return ("推理失败。")  
 # 检查是否已经找到最终规则  
+
 if max(foundRules) >= 10:  
     return features[-1]  
 
