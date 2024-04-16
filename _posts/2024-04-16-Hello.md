@@ -13,7 +13,7 @@ tags:
 Hello，折腾一天，终于搞好了这个。  
 想来是该写点什么东西，至于要写什么东西，确实提笔忘字，对键凝咽。
 
-![思考沉默尴尬](img/inPost/思考沉默尴尬.gif)
+![思考沉默尴尬](https://raw.githubusercontent.com/HoozS/pic/main/pic/思考沉默尴尬.gif)
 
 即是写Markdown，那也写点什么适合Markdown的。
 
@@ -28,4 +28,4 @@ int main(int argc, char **argv)
 }
 ```
 
-![1713258385773](img/inPost/1713258385773.jpg)
+![1713258385773](https://raw.githubusercontent.com/HoozS/pic/main/pic/1713258385773.jpg)
