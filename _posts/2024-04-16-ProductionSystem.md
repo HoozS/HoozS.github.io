@@ -114,3 +114,7 @@ if max(foundRules) >= 10:
     return features[-1]
 
 ```
+
+# 结果
+
+![20240416183232](https://raw.githubusercontent.com/HoozS/pic/main/pic/20240416183232.png)
