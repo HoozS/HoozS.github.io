@@ -15,7 +15,7 @@ future: true
 RSS: false
 github_username:    HoozS
 twitter_username:  Hooz_S
-zhihu_username:  Hooz
+# zhihu_username:  Hooz
 # facebook_username:  Hooz
 
 
@@ -54,13 +54,13 @@ kramdown:
 
 
 
-# Disqus settings
-#disqus_username: _your_disqus_short_name_
+# # Disqus settings
+# #disqus_username: _your_disqus_short_name_
 
-# Duoshuo settings
-duoshuo_username: huxblog
-# Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+# # Duoshuo settings
+# duoshuo_username: huxblog
+# # Share component is depend on Comment so we can NOT use share only.
+# duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
 
 
@@ -93,7 +93,7 @@ friends: [
         title: "Hux Blog",
         href: "https://huangxuan.me"
     },{
-        title: "Qinag",
+        title: "Qiang",
         href: "https://xianyu4625.github.io"
     },{
         title: "Bar",
