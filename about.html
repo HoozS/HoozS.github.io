@@ -6,14 +6,14 @@ header-img: "img/about-bg.jpg"
 ---
 
 <!-- Language Selector -->
-<select onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+<select onchange="onLanChange(this.options[this.options.selectedIndex].value)">
     <option value="0" selected> 中文 Chinese </option>
     <option value="1"> 英语 English </option>
 </select>
 
 <!-- Chinese Version -->
 <div class="zh post-container">
-    
+
     <p style="text-align:left;">
         亲爱的马克西米利安：
     </p>
@@ -36,17 +36,24 @@ header-img: "img/about-bg.jpg"
 <!-- English Version -->
 <div class="en post-container">
     <p>
-        A spectre is haunting Europe -- the spectre of Communism. All the Powers of old Europe have entered into a holy alliance to exorcise this spectre: Pope and Czar, Metternich and Guizot, French Radicals and German police-spies.<br>
+        A spectre is haunting Europe -- the spectre of Communism. All the Powers of old Europe have entered into a holy
+        alliance to exorcise this spectre: Pope and Czar, Metternich and Guizot, French Radicals and German
+        police-spies.<br>
         <br>
-        Where is the party in opposition that has not been decried as Communistic by its opponents in power? Where the Opposition that has not hurled back the branding reproach of Communism, against the more advanced opposition parties, as well as against its reactionary adversaries?<br>
+        Where is the party in opposition that has not been decried as Communistic by its opponents in power? Where the
+        Opposition that has not hurled back the branding reproach of Communism, against the more advanced opposition
+        parties, as well as against its reactionary adversaries?<br>
         <br>
         Two things result from this fact.<br>
         <br>
         I. Communism is already acknowledged by all European Powers to be itself a Power.<br>
         <br>
-        II. It is high time that Communists should openly, in the face of the whole world, publish their views, their aims, their tendencies, and meet this nursery tale of the Spectre of Communism with a Manifesto of the party itself.<br>
+        II. It is high time that Communists should openly, in the face of the whole world, publish their views, their
+        aims, their tendencies, and meet this nursery tale of the Spectre of Communism with a Manifesto of the party
+        itself.<br>
         <br>
-        To this end, Communists of various nationalities have assembled in London, and sketched the following Manifesto, to be published in the English, French, German, Italian, Flemish and Danish languages.<br>
+        To this end, Communists of various nationalities have assembled in London, and sketched the following Manifesto,
+        to be published in the English, French, German, Italian, Flemish and Danish languages.<br>
     </p>
 
     <blockquote>
@@ -54,7 +61,7 @@ header-img: "img/about-bg.jpg"
     </blockquote>
 
     <p style="text-align:right;">
-    -- Manifesto of the Communist Party
+        -- Manifesto of the Communist Party
     </p>
 
 </div>
@@ -63,11 +70,11 @@ header-img: "img/about-bg.jpg"
 <script type="text/javascript">
     var $zh = document.querySelector(".zh");
     var $en = document.querySelector(".en");
-    function onLanChange(index){
-        if(index == 0){
+    function onLanChange(index) {
+        if (index == 0) {
             $zh.style.display = "block";
             $en.style.display = "none";
-        }else{
+        } else {
             $en.style.display = "block";
             $zh.style.display = "none";
         }
@@ -80,34 +87,28 @@ header-img: "img/about-bg.jpg"
 {% if site.duoshuo_username %}
 <!-- 多说评论框 start -->
 <div class="comment">
-    <div class="ds-thread"
-    {% if site.duoshuo_username == "huxblog" %}
-        data-thread-id="1187623191091085319"
-    {% else %}
-        data-thread-key="{{site.duoshuo_username}}/about"
-    {% endif %}
-
-    data-title="{{page.title}}"
-    data-url="{{site.url}}/about/"></div>
+    <div class="ds-thread" {% if site.duoshuo_username=="huxblog" %} data-thread-id="1187623191091085319" {% else %}
+        data-thread-key="{{site.duoshuo_username}}/about" {% endif %} data-title="{{page.title}}"
+        data-url="{{site.url}}/about/"></div>
 </div>
 <!-- 多说评论框 end -->
 
 <!-- Duoshuo hacking -->
-<input id="dsUser" type="hidden" value="{{site.duoshuo_username}}"  />
+<input id="dsUser" type="hidden" value="{{site.duoshuo_username}}" />
 
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
     // dynamic User hacking by Hux
     var _user = document.getElementById('dsUser').value;
     // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
+    var duoshuoQuery = { short_name: _user };
+    (function () {
         var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
+        ds.type = 'text/javascript'; ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
 <!-- 多说公共JS代码 end -->
@@ -130,7 +131,7 @@ header-img: "img/about-bg.jpg"
     var disqus_identifier = "{{site.disqus_username}}/{{page.url}}";
     var disqus_url = "{{site.url}}{{page.url}}";
 
-    (function() {
+    (function () {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
