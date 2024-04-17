@@ -15,7 +15,7 @@ future: true
 RSS: false
 github_username:    HoozS
 twitter_username:  Hooz_S
-Zhihu:  Hooz
+zhihu_username:  Hooz
 # facebook_username:  Hooz
 
 
@@ -91,10 +91,10 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 friends: [
     {
         title: "Hux Blog",
-        href: "http://huangxuan.me"
+        href: "https://huangxuan.me"
     },{
-        title: "Foo",
-        href: "#"
+        title: "Qinag",
+        href: "https://xianyu4625.github.io"
     },{
         title: "Bar",
         href: "#"
