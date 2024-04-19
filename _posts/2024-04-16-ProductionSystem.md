@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "产生式系统实验"
-subtitle:   " 基于Python的产生式动物识别系统"
+subtitle:   "基于Python的产生式动物识别系统"
 date:       2024-04-16 18:00:00
 author:     "Hooz"
 header-img: "img/post-bg-2015.jpg"
